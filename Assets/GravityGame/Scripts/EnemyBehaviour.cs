@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System;
-using UnityStandardAssets._2D;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour {
 
+public class EnemyBehaviour : MonoBehaviour
+{
     public float speed = 2.5f;
     public List<GameObject> trialName;
     public float marginOfError;
@@ -15,16 +15,18 @@ public class EnemyBehaviour : MonoBehaviour {
     private int nodeNumber;
     private Rigidbody2D rb;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         nodeNumber = 0;
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-            
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void FixedUpdate()
     {
@@ -33,12 +35,12 @@ public class EnemyBehaviour : MonoBehaviour {
                                 trialName[nodeNumber].transform.position.y - transform.position.y);
         if (Math.Abs(direction.x) < marginOfError && Math.Abs(direction.y) < marginOfError)
         {
-            nodeNumber = (nodeNumber + 1 ) % trialName.Count;
+            nodeNumber = (nodeNumber + 1) % trialName.Count;
             rb.velocity = Vector2.zero;
         }
         else
         {
-            rb.AddForce(direction * speed);
+            rb.AddForce(direction.normalized * speed);
         }
     }
 
@@ -46,8 +48,8 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlatformerCharacter2D playerScript = collision.GetComponent<PlatformerCharacter2D>();
-            playerScript.takeDamage(this.damage);
+            PlayerDamage playerScript = collision.GetComponent<PlayerDamage>();
+            playerScript.TakeDamage(this.damage);
         }
     }
 }

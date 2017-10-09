@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UnityStandardAssets._2D
 {
@@ -23,18 +22,18 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
         // Custom attributes
-
+        /*
         public int lives;
         public float invulnerability = 1.0f;
         public float flashDuration = 0.1f;
         public Text loseText;
-
+        
         private bool invulnerable = false;
-
+        */
         // private IEnumerator corutine;
 
         // Custom methods
-
+        /*
         public void takeDamage (int damage)
         {
             if (!invulnerable)
@@ -65,7 +64,7 @@ namespace UnityStandardAssets._2D
             }
             invulnerable = false;
         }
-
+        */
         private void Awake()
         {
             // Setting up references.
