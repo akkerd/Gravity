@@ -7,8 +7,8 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public float speed = 2.5f;
-    public List<GameObject> trialName;
-    public float marginOfError;
+    public List<GameObject> nodeList;
+    public float marginOfError = 0.5f;
     public int damage = 1;
 
     private Vector2 direction;
@@ -31,11 +31,11 @@ public class EnemyBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
 
-        direction = new Vector2(trialName[nodeNumber].transform.position.x - transform.position.x,
-                                trialName[nodeNumber].transform.position.y - transform.position.y);
+        direction = new Vector2(nodeList[nodeNumber].transform.position.x - transform.position.x,
+                                nodeList[nodeNumber].transform.position.y - transform.position.y);
         if (Math.Abs(direction.x) < marginOfError && Math.Abs(direction.y) < marginOfError)
         {
-            nodeNumber = (nodeNumber + 1) % trialName.Count;
+            nodeNumber = (nodeNumber + 1) % nodeList.Count;
             rb.velocity = Vector2.zero;
         }
         else
