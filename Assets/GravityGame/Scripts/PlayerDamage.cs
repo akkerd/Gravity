@@ -8,10 +8,13 @@ using UnityEngine.UI;
 public class PlayerDamage : MonoBehaviour {
 
 
-    public int lives;
+    public int lives = 5;
+    public int maxLives = 5;
     public float invulnerability = 1.0f;
     public float flashDuration = 0.1f;
     public Text loseText;
+    public List<Image> heartImgs;
+
 
     private bool invulnerable = false;
 
@@ -24,6 +27,18 @@ public class PlayerDamage : MonoBehaviour {
             if (lives <= 0)
             {
                 loseText.enabled = true;
+            }
+            ShowLives();
+        }
+    }
+
+    public void ShowLives()
+    {
+        for (int i = 0; i < maxLives; ++i)
+        {
+            if (i >= lives)
+            {
+                heartImgs[i].enabled = false;
             }
         }
     }
