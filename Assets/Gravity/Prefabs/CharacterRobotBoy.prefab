@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 114674631647779596}
   - component: {fileID: 114594426020118680}
   - component: {fileID: 61316566117955546}
+  - component: {fileID: 114410037398292762}
   m_Layer: 0
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -83,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821975311233708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.05, y: 0.28, z: 0}
+  m_LocalPosition: {x: -12.2, y: -4.2, z: 0}
   m_LocalScale: {x: 1.7715329, y: 1.7715304, z: 1}
   m_Children:
   - {fileID: 4979124626579924}
@@ -181,6 +182,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114410037398292762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821975311233708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a812b957472148d4188f60bdec8ba1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 5
+  maxLives: 5
+  invulnerability: 1
+  flashDuration: 0.1
+  loseText: {fileID: 0}
+  heartImgs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114594426020118680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_JumpForce: 700
+  m_JumpForce: 800
   m_CrouchSpeed: 0.25
   m_AirControl: 1
   m_WhatIsGround:
