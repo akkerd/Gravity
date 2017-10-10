@@ -7,7 +7,7 @@ public class Exit : MonoBehaviour
 {
 
     private GameObject player;
-    public static int currentLevel = 0;
+    public static int currentLevel = 1;
     public string[] levelNames = new string[] { "Level_1", "Level_2", "Level_3" };
     // Use this for initialization
     void Start()
@@ -30,10 +30,11 @@ public class Exit : MonoBehaviour
         {
             if (currentLevel < levelNames.Length)
             {
-                currentLevel++;
+                
                 //Scene sceneToLoad = SceneManager.GetSceneByName(levelNames[currentLevel]);
                 SceneManager.LoadScene(levelNames[currentLevel], LoadSceneMode.Single);
                 //Application.LoadLevel(levelNames[currentLevel]);
+                currentLevel++;
 
             }
         }
