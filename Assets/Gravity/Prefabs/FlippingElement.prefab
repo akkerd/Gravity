@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212860977025224680}
   - component: {fileID: 61612825902202372}
   - component: {fileID: 114843951574939734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlippingElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
