@@ -21,50 +21,10 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
-        // Custom attributes
-        /*
-        public int lives;
-        public float invulnerability = 1.0f;
-        public float flashDuration = 0.1f;
-        public Text loseText;
-        
-        private bool invulnerable = false;
-        */
-        // private IEnumerator corutine;
 
-        // Custom methods
-        /*
-        public void takeDamage (int damage)
-        {
-            if (!invulnerable)
-            {
-                this.lives -= damage;
-                StartCoroutine(characterFlash());
-                if (lives <= 0)
-                {
-                    loseText.enabled = true;    
-                }
-                Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        public Vector3 startPosition;
+        public float startGravity;
 
-                rb.AddForce(Vector2.up * 10);
-            }
-        }
-
-        private IEnumerator characterFlash ()
-        {
-            //Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), );
-            invulnerable = true;
-           
-            for (float i = 0.0f; i < invulnerability; i += flashDuration)
-            {
-                yield return new WaitForSeconds(flashDuration);
-                this.GetComponent<SpriteRenderer>().enabled = false;
-                yield return new WaitForSeconds(flashDuration);
-                this.GetComponent<SpriteRenderer>().enabled = true;
-            }
-            invulnerable = false;
-        }
-        */
         private void Awake()
         {
             // Setting up references.
@@ -72,6 +32,8 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            startGravity = m_Rigidbody2D.gravityScale;
+            startPosition = transform.position;
         }
 
 
