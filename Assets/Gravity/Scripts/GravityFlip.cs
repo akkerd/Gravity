@@ -35,20 +35,20 @@ public class GravityFlip : MonoBehaviour {
             player.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>().m_JumpForce *= -1;
             changeSprite();
 
-            StartCoroutine( UnableFor( player, 2f) );
+            StartCoroutine( UnableFor(2f) );
         }
 
     }
 
-    IEnumerator UnableFor( GameObject o, float sec )
+    IEnumerator UnableFor( float sec )
     {
-        o.GetComponent<BoxCollider2D>().enabled = false;
+		this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
         yield return new WaitForSeconds(sec);
 
         flipping = false;
         changeSprite();
-        o.GetComponent<BoxCollider2D>().enabled = true;
+		this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     void changeSprite()
