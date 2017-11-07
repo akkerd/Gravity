@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Gravity/Scene/B1-SwitchCam.unity
+    guid: 1ef978aceedbaef4d98c419506218225
+  - enabled: 1
+    path: Assets/Gravity/Scene/B2-SwitchCam.unity
+    guid: eb3c8f9a35eff324bbaec757dbc5a04b
